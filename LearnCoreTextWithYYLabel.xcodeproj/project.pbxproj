@@ -15,6 +15,14 @@
 		66E2334821956608005D3DB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2334721956608005D3DB7 /* main.m */; };
 		66E2335221956608005D3DB7 /* LearnCoreTextWithYYLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2335121956608005D3DB7 /* LearnCoreTextWithYYLabelTests.m */; };
 		66E2335D21956608005D3DB7 /* LearnCoreTextWithYYLabelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2335C21956608005D3DB7 /* LearnCoreTextWithYYLabelUITests.m */; };
+		66E2337321957426005D3DB7 /* SCTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2337221957426005D3DB7 /* SCTextLabel.m */; };
+		66E233B921957881005D3DB7 /* NSMutableAttributedString+SCText.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E233B821957881005D3DB7 /* NSMutableAttributedString+SCText.m */; };
+		66E233BC2195788E005D3DB7 /* NSParagraphStyle+SCText.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E233BB2195788E005D3DB7 /* NSParagraphStyle+SCText.m */; };
+		66E233BF2195789E005D3DB7 /* SCTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E233BE2195789E005D3DB7 /* SCTextLayer.m */; };
+		66E233C2219578E4005D3DB7 /* SCTextLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E233C1219578E4005D3DB7 /* SCTextLayout.m */; };
+		66E233C621957904005D3DB7 /* SCTextLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E233C521957904005D3DB7 /* SCTextLine.m */; };
+		66E233CA21957930005D3DB7 /* SCTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E233C921957930005D3DB7 /* SCTextContainer.m */; };
+		66E233CE2195794E005D3DB7 /* SCTextRunDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E233CD2195794E005D3DB7 /* SCTextRunDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,22 @@
 		66E2335821956608005D3DB7 /* LearnCoreTextWithYYLabelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnCoreTextWithYYLabelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E2335C21956608005D3DB7 /* LearnCoreTextWithYYLabelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnCoreTextWithYYLabelUITests.m; sourceTree = "<group>"; };
 		66E2335E21956608005D3DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E2337121957426005D3DB7 /* SCTextLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCTextLabel.h; sourceTree = "<group>"; };
+		66E2337221957426005D3DB7 /* SCTextLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTextLabel.m; sourceTree = "<group>"; };
+		66E233B721957881005D3DB7 /* NSMutableAttributedString+SCText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+SCText.h"; sourceTree = "<group>"; };
+		66E233B821957881005D3DB7 /* NSMutableAttributedString+SCText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+SCText.m"; sourceTree = "<group>"; };
+		66E233BA2195788E005D3DB7 /* NSParagraphStyle+SCText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+SCText.h"; sourceTree = "<group>"; };
+		66E233BB2195788E005D3DB7 /* NSParagraphStyle+SCText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSParagraphStyle+SCText.m"; sourceTree = "<group>"; };
+		66E233BD2195789E005D3DB7 /* SCTextLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCTextLayer.h; sourceTree = "<group>"; };
+		66E233BE2195789E005D3DB7 /* SCTextLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTextLayer.m; sourceTree = "<group>"; };
+		66E233C0219578E4005D3DB7 /* SCTextLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCTextLayout.h; sourceTree = "<group>"; };
+		66E233C1219578E4005D3DB7 /* SCTextLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTextLayout.m; sourceTree = "<group>"; };
+		66E233C421957904005D3DB7 /* SCTextLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCTextLine.h; sourceTree = "<group>"; };
+		66E233C521957904005D3DB7 /* SCTextLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTextLine.m; sourceTree = "<group>"; };
+		66E233C821957930005D3DB7 /* SCTextContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCTextContainer.h; sourceTree = "<group>"; };
+		66E233C921957930005D3DB7 /* SCTextContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTextContainer.m; sourceTree = "<group>"; };
+		66E233CC2195794E005D3DB7 /* SCTextRunDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCTextRunDelegate.h; sourceTree = "<group>"; };
+		66E233CD2195794E005D3DB7 /* SCTextRunDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTextRunDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +208,80 @@
 		66E2337021956C14005D3DB7 /* SCTextLabel */ = {
 			isa = PBXGroup;
 			children = (
+				66E2337121957426005D3DB7 /* SCTextLabel.h */,
+				66E2337221957426005D3DB7 /* SCTextLabel.m */,
+				66E2337521957439005D3DB7 /* Components */,
+				66E233742195742F005D3DB7 /* Category */,
 			);
 			path = SCTextLabel;
+			sourceTree = "<group>";
+		};
+		66E233742195742F005D3DB7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				66E233B721957881005D3DB7 /* NSMutableAttributedString+SCText.h */,
+				66E233B821957881005D3DB7 /* NSMutableAttributedString+SCText.m */,
+				66E233BA2195788E005D3DB7 /* NSParagraphStyle+SCText.h */,
+				66E233BB2195788E005D3DB7 /* NSParagraphStyle+SCText.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		66E2337521957439005D3DB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				66E233CB21957936005D3DB7 /* TextRunDelegate */,
+				66E233C721957920005D3DB7 /* TextContainer */,
+				66E233C3219578EC005D3DB7 /* TextLine */,
+				66E233B621957554005D3DB7 /* TextLayout */,
+				66E233B421957544005D3DB7 /* TextLayer */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		66E233B421957544005D3DB7 /* TextLayer */ = {
+			isa = PBXGroup;
+			children = (
+				66E233BD2195789E005D3DB7 /* SCTextLayer.h */,
+				66E233BE2195789E005D3DB7 /* SCTextLayer.m */,
+			);
+			path = TextLayer;
+			sourceTree = "<group>";
+		};
+		66E233B621957554005D3DB7 /* TextLayout */ = {
+			isa = PBXGroup;
+			children = (
+				66E233C0219578E4005D3DB7 /* SCTextLayout.h */,
+				66E233C1219578E4005D3DB7 /* SCTextLayout.m */,
+			);
+			path = TextLayout;
+			sourceTree = "<group>";
+		};
+		66E233C3219578EC005D3DB7 /* TextLine */ = {
+			isa = PBXGroup;
+			children = (
+				66E233C421957904005D3DB7 /* SCTextLine.h */,
+				66E233C521957904005D3DB7 /* SCTextLine.m */,
+			);
+			path = TextLine;
+			sourceTree = "<group>";
+		};
+		66E233C721957920005D3DB7 /* TextContainer */ = {
+			isa = PBXGroup;
+			children = (
+				66E233C821957930005D3DB7 /* SCTextContainer.h */,
+				66E233C921957930005D3DB7 /* SCTextContainer.m */,
+			);
+			path = TextContainer;
+			sourceTree = "<group>";
+		};
+		66E233CB21957936005D3DB7 /* TextRunDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				66E233CC2195794E005D3DB7 /* SCTextRunDelegate.h */,
+				66E233CD2195794E005D3DB7 /* SCTextRunDelegate.m */,
+			);
+			path = TextRunDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,9 +415,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E233CE2195794E005D3DB7 /* SCTextRunDelegate.m in Sources */,
+				66E233BC2195788E005D3DB7 /* NSParagraphStyle+SCText.m in Sources */,
+				66E233B921957881005D3DB7 /* NSMutableAttributedString+SCText.m in Sources */,
+				66E233C621957904005D3DB7 /* SCTextLine.m in Sources */,
+				66E233C2219578E4005D3DB7 /* SCTextLayout.m in Sources */,
+				66E233CA21957930005D3DB7 /* SCTextContainer.m in Sources */,
+				66E233BF2195789E005D3DB7 /* SCTextLayer.m in Sources */,
 				66E2333D21956607005D3DB7 /* ViewController.m in Sources */,
 				66E2334821956608005D3DB7 /* main.m in Sources */,
 				66E2333A21956607005D3DB7 /* AppDelegate.m in Sources */,
+				66E2337321957426005D3DB7 /* SCTextLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
