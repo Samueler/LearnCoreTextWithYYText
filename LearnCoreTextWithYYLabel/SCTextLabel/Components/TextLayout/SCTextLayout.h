@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreText/CoreText.h>
 
 @interface SCTextLayout : NSObject
+
+@property(nonatomic, copy) NSAttributedString *attributeString;
+
++ (nullable instancetype)sc_textLayoutWithContext:(CGContextRef)context attributeText:(NSAttributedString *)attributeString;
+
+- (void)sc_textLayoutDrawWithContext:(CGContextRef)context containerRect:(CGRect)containerRect;
 
 @end

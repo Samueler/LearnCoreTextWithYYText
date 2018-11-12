@@ -7,7 +7,20 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
+
+typedef void(^SCTextLayerDisplaying)(CGContextRef context, CGSize size);
+
+@protocol SCTextLayerDelegate <NSObject>
+
+@required
+
+- (void)sc_textLayerDisplay;
+
+@end
 
 @interface SCTextLayer : CALayer
+
+@property(nonatomic, copy) SCTextLayerDisplaying textLayerDisplaying;
 
 @end

@@ -10,4 +10,8 @@
 
 @interface SCTextLabel : UIView
 
+@property(nonatomic, copy) NSString *text;
+@property(nonatomic, strong) UIFont *font;
+@property(nonatomic, strong) UIColor *color;
+
 @end

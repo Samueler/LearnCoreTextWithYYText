@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SCTextLabel.h"
 
 @interface ViewController ()
 
@@ -16,13 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    SCTextLabel *coreTextLabel = [[SCTextLabel alloc] initWithFrame:CGRectMake(100, 100, 200, 130)];
+    coreTextLabel.text = @"LearnCoreTextWithYYLabel......";
+    coreTextLabel.color = [UIColor orangeColor];
+    coreTextLabel.font = [UIFont systemFontOfSize:20.f];
+    [self.view addSubview:coreTextLabel];
+    
 }
 
 

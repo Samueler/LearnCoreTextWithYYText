@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSMutableAttributedString (SCText)
+
+@property(nonatomic, strong) UIFont *sc_font;
+- (void)sc_setFont:(UIFont *)font range:(NSRange)range;
+
+@property(nonatomic, strong) UIColor *sc_color;
+- (void)sc_setColor:(UIColor *)color range:(NSRange)range;
 
 @end
