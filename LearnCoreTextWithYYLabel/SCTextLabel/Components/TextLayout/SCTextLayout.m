@@ -26,20 +26,30 @@ static void SCTextLayoutDrawText(SCTextLayout *textLayout, CGContextRef context,
     // Draw text with Frame
 //    CTFrameDraw(frame, context);
     
+    // Draw text with lines or runs
+    
+    CFArrayRef lines = CTFrameGetLines(frame);
+    CFIndex lineCount = CFArrayGetCount(lines);
+    CGPoint *lineOrigins = malloc(lineCount * sizeof(CGPoint));
+    CTFrameGetLineOrigins(frame, CFRangeMake(0, CFArrayGetCount(lines)), lineOrigins);
+    
     // Draw text with lines
-//    CFArrayRef lines = CTFrameGetLines(frame);
-//    for (NSUInteger idx = 0; idx < CFArrayGetCount(lines); idx++) {
+//    for (NSUInteger idx = 0; idx < lineCount; idx++) {
 //        CTLineRef line = CFArrayGetValueAtIndex(lines, idx);
+//        CGPoint position = lineOrigins[idx];
+//        CGContextSetTextPosition(context, position.x, position.y);
 //        CTLineDraw(line, context);
 //    }
 
     // Draw text with runs
-    CFArrayRef lines = CTFrameGetLines(frame);
-    for (NSUInteger idx = 0; idx < CFArrayGetCount(lines); idx++) {
+    for (NSUInteger idx = 0; idx < lineCount; idx++) {
         CTLineRef line = CFArrayGetValueAtIndex(lines, idx);
 
         CFArrayRef runs = CTLineGetGlyphRuns(line);
         for (NSUInteger runIdx = 0; runIdx < CFArrayGetCount(runs); runIdx++) {
+
+            CGPoint position = lineOrigins[idx];
+            CGContextSetTextPosition(context, position.x, position.y);
             CTRunDraw(CFArrayGetValueAtIndex(runs, runIdx), context, CFRangeMake(0, 0));
         }
     }
