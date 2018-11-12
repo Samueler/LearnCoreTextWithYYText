@@ -23,7 +23,26 @@ static void SCTextLayoutDrawText(SCTextLayout *textLayout, CGContextRef context,
 
     CTFrameRef frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, textLayout.attributeString.length), path, NULL);
 
-    CTFrameDraw(frame, context);
+    // Draw text with Frame
+//    CTFrameDraw(frame, context);
+    
+    // Draw text with lines
+//    CFArrayRef lines = CTFrameGetLines(frame);
+//    for (NSUInteger idx = 0; idx < CFArrayGetCount(lines); idx++) {
+//        CTLineRef line = CFArrayGetValueAtIndex(lines, idx);
+//        CTLineDraw(line, context);
+//    }
+
+    // Draw text with runs
+    CFArrayRef lines = CTFrameGetLines(frame);
+    for (NSUInteger idx = 0; idx < CFArrayGetCount(lines); idx++) {
+        CTLineRef line = CFArrayGetValueAtIndex(lines, idx);
+
+        CFArrayRef runs = CTLineGetGlyphRuns(line);
+        for (NSUInteger runIdx = 0; runIdx < CFArrayGetCount(runs); runIdx++) {
+            CTRunDraw(CFArrayGetValueAtIndex(runs, runIdx), context, CFRangeMake(0, 0));
+        }
+    }
 
     CFRelease(frameSetter);
     CFRelease(frame);

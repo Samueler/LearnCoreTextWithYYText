@@ -18,12 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    SCTextLabel *coreTextLabel = [[SCTextLabel alloc] initWithFrame:CGRectMake(100, 100, 200, 130)];
+//    CGFloat coreTextLabelW = self.view.frame.size.width - 20;
+    CGFloat coreTextLabelW = 200;
+    
+    SCTextLabel *coreTextLabel = [[SCTextLabel alloc] initWithFrame:CGRectMake(10, 100, coreTextLabelW, 130)];
     coreTextLabel.text = @"LearnCoreTextWithYYLabel......";
     coreTextLabel.color = [UIColor orangeColor];
     coreTextLabel.font = [UIFont systemFontOfSize:20.f];
     [self.view addSubview:coreTextLabel];
-    
 }
 
 
