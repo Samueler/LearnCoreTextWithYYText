@@ -19,12 +19,14 @@
     [super viewDidLoad];
     
 //    CGFloat coreTextLabelW = self.view.frame.size.width - 20;
-    CGFloat coreTextLabelW = 200;
+    CGFloat coreTextLabelW = 100;
     
     SCTextLabel *coreTextLabel = [[SCTextLabel alloc] initWithFrame:CGRectMake(10, 100, coreTextLabelW, 130)];
-    coreTextLabel.text = @"LearnCoreTextWithYYLabel......";
+    coreTextLabel.text = @"LearnCoreTextWithYYLabelxxxxx";
     coreTextLabel.color = [UIColor orangeColor];
     coreTextLabel.font = [UIFont systemFontOfSize:20.f];
+    coreTextLabel.textAlignment = NSTextAlignmentCenter;
+    coreTextLabel.lineBreakMode = NSLineBreakByCharWrapping;
     [self.view addSubview:coreTextLabel];
 }
 

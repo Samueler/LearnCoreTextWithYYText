@@ -13,5 +13,9 @@
 @property(nonatomic, copy) NSString *text;
 @property(nonatomic, strong) UIFont *font;
 @property(nonatomic, strong) UIColor *color;
+@property (nonatomic, assign) NSTextAlignment textAlignment;
+@property (nonatomic, assign) NSLineBreakMode lineBreakMode;
+
+@property (nonatomic, strong) NSAttributedString *truncationToken;
 
 @end

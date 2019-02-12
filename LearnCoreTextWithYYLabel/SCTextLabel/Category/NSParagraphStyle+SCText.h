@@ -10,4 +10,6 @@
 
 @interface NSParagraphStyle (SCText)
 
++ (nullable NSParagraphStyle *)sc_styleWithCTStyle:(CTParagraphStyleRef)CTStyle;
+
 @end

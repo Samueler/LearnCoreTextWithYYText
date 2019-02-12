@@ -129,4 +129,34 @@
     [self sc_setNeedsDisplay];
 }
 
+- (void)setTextAlignment:(NSTextAlignment)textAlignment {
+    if (_textAlignment == textAlignment) {
+        return;
+    }
+    
+    _textAlignment = textAlignment;
+    _innerAttributeString.sc_alignment = textAlignment;
+    
+    [self sc_setNeedsDisplay];
+}
+
+- (void)setLineBreakMode:(NSLineBreakMode)lineBreakMode {
+    if (_lineBreakMode == lineBreakMode) {
+        return;
+    }
+    
+    _lineBreakMode = lineBreakMode;
+    _innerAttributeString.sc_lineBreakMode = lineBreakMode;
+    
+    [self sc_setNeedsDisplay];
+}
+
+- (void)setTruncationToken:(NSAttributedString *)truncationToken {
+    if (_truncationToken == truncationToken || [_truncationToken isEqual:truncationToken]) {
+        return;
+    }
+    
+    _truncationToken = truncationToken.copy;
+}
+
 @end

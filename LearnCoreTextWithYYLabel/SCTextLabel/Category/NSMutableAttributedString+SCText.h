@@ -17,4 +17,13 @@
 @property(nonatomic, strong) UIColor *sc_color;
 - (void)sc_setColor:(UIColor *)color range:(NSRange)range;
 
+@property (nonatomic, assign) NSTextAlignment sc_alignment;
+- (void)sc_setAlignment:(NSTextAlignment)alignment range:(NSRange)range;
+
+@property (nonatomic, strong) NSParagraphStyle *sc_paragraphStyle;
+- (void)sc_setParagraphStyle:(NSParagraphStyle *)paragraphStyle range:(NSRange)range;
+
+@property (nonatomic, assign) NSLineBreakMode sc_lineBreakMode;
+- (void)sc_setLineBreakMode:(NSLineBreakMode)lineBreakMode range:(NSRange)range;
+
 @end
