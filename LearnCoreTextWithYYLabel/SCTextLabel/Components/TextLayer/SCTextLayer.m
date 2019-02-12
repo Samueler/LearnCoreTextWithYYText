@@ -27,7 +27,7 @@
         [delegate sc_textLayerDisplay];
     }
 
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, self.contentsScale);
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, UIScreen.mainScreen.scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     if (self.opaque && context) {
