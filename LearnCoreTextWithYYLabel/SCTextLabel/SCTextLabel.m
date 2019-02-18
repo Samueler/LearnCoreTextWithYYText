@@ -9,11 +9,13 @@
 #import "SCTextLabel.h"
 #import "SCTextLayer.h"
 #import "SCTextLayout.h"
+#import "SCTextContainer.h"
 #import "NSMutableAttributedString+SCText.h"
 
 @interface SCTextLabel () <SCTextLayerDelegate> {
     NSMutableAttributedString *_innerAttributeString;
     CGRect _innerFrame;
+    SCTextContainer *_innerContainer;
 }
 
 @end
@@ -51,6 +53,7 @@
     _font = [self sc_defaultFont];
     
     _innerAttributeString = [[NSMutableAttributedString alloc] init];
+    _innerContainer = [[SCTextContainer alloc] init];
 }
 
 - (UIColor *)sc_defaultColor {
@@ -157,6 +160,10 @@
     }
     
     _truncationToken = truncationToken.copy;
+    _innerContainer.truncationToken = truncationToken;
+    if (_innerAttributeString.length) {
+        [self sc_setNeedsDisplay];
+    }
 }
 
 @end

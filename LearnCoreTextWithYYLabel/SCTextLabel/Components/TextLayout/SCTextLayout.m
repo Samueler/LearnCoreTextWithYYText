@@ -59,12 +59,88 @@ static void SCTextLayoutDrawText(SCTextLayout *textLayout, CGContextRef context,
     CFRelease(path);
 }
 
+@interface SCTextLayout ()
+
+@property (nonatomic, strong) SCTextContainer *textContainer;
+@property (nonatomic, assign) NSRange range;
+
+@end
+
 @implementation SCTextLayout
 
 + (instancetype)sc_textLayoutWithContext:(CGContextRef)context attributeText:(NSAttributedString *)attributeString {
     SCTextLayout *layout = [[SCTextLayout alloc] init];
     layout.attributeString = attributeString;
     return layout;
+}
+
++ (instancetype)sc_textLayoutWithContainer:(SCTextContainer *)container attributeText:(NSAttributedString *)attributeString {
+    return [self sc_textLayoutWithContainer:container attributeText:attributeString range:NSMakeRange(0, attributeString.length)];
+}
+
++ (instancetype)sc_textLayoutWithContainer:(SCTextContainer *)container attributeText:(NSAttributedString *)attributeString range:(NSRange)range {
+    SCTextLayout *textLayout = nil;
+    CGPathRef cgPath = nil;
+    NSMutableDictionary *frameAttrs = nil;
+    CTFramesetterRef ctFrameSetter = NULL;
+    CTFrameRef ctFrame = NULL;
+    CFArrayRef ctLines = NULL;
+    CGPoint *lineOrigins = NULL;
+    NSUInteger lineCount = 0;
+    NSMutableArray *lines = nil;
+    BOOL needTruncation = NO;
+    NSAttributedString *truncationToken = nil;
+    SCTextLine *truncatedLine = nil;
+    NSUInteger maximumNumberOfRows = 0;
+    
+    attributeString = attributeString.mutableCopy;
+    container = container.mutableCopy;
+    if (!attributeString || !container) {
+        return nil;
+    }
+    
+    if (range.location + range.length > attributeString.length) {
+        return nil;
+    }
+    
+    maximumNumberOfRows = container.maximumNumberOfRows;
+    
+    textLayout = [[SCTextLayout alloc] init];
+    textLayout.attributeString = attributeString;
+    textLayout.textContainer = container;
+    textLayout.range = range;
+    
+    if (!container.path) {
+        if (container.size.width <= 0 || container.size.height <= 0) {
+            goto fail;
+        }
+        
+        CGRect rect = (CGRect) {CGPointZero, container.size};
+        rect = UIEdgeInsetsInsetRect(rect, container.insets);
+        rect = CGRectStandardize(rect);
+        rect = CGRectApplyAffineTransform(rect, CGAffineTransformMakeScale(1, -1));
+        cgPath = CGPathCreateWithRect(rect, NULL);
+    } else if (container)
+    
+    return textLayout;
+    
+fail:
+    if (cgPath) {
+        CFRelease(cgPath);
+    }
+    
+    if (ctFrameSetter) {
+        CFRelease(ctFrameSetter);
+    }
+    
+    if (ctFrame) {
+        CFRelease(ctFrame);
+    }
+    
+    if (lineOrigins) {
+        free(lineOrigins);
+    }
+    return nil;
 }
 
 #pragma mark - Public Functions
